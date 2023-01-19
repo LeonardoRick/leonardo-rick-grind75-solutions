@@ -5,7 +5,7 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-    const alreadyChecked = {}
+    const alreadyChecked = {};
     for (let i = 0; i < nums.length; i++) {
         const curr = nums[i];
         const rest = target - curr;
@@ -17,4 +17,5 @@ var twoSum = function (nums, target) {
     return [-1, -1];
 };
 
-console.log(twoSum([2,7,11,15], 9))
+console.log(twoSum([2, 7, 11, 15], 9));
+console.log(twoSum([3, 2, 4], 6));

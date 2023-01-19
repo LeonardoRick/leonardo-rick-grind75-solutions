@@ -1,0 +1,26 @@
+{
+    "name": "leonardo-rick-grind-75-solutions",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "My Grind 75 exercises resolutions",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LeonardoRick/leonardo-rick-grind75-solutions.git"
+    },
+    "keywords": [
+        "Grind",
+        "75",
+        "javascript",
+        "python"
+    ],
+    "author": "Leonardo Rick",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/LeonardoRick/leonardo-rick-grind75-solutions/issues"
+    },
+    "homepage": "https://github.com/LeonardoRick/leonardo-rick-grind75-solutions#readme"
+}
