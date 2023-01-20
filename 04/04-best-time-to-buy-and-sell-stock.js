@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 /**
  * @param {number[]} prices
  * @return {number}
@@ -10,49 +11,33 @@ const maxProfit = function (prices) {
         diff: null,
     };
 
-    let minChanged = false;
-    let maxChanged = false;
-    let curr = null;
+    let curr;
+    let isCurrLowerThanMin;
     for (let i = 0; i < prices.length; i++) {
-        minChanged = false;
-        maxChanged = false;
         curr = { value: prices[i], index: i };
+        isCurrLowerThanMin = !values.min || curr.value < values.min.value;
         // Update min/max values
-        if (
-            (!values.min || curr.value < values.min.value) &&
-            (!values.max || curr.index < values.max.index)
-        ) {
-            minChanged = true;
+        if (isCurrLowerThanMin && (!values.max || curr.index < values.max.index)) {
             values.min = curr;
-        }
-
-        if (!minChanged && (!values.max || curr.value > values.max.value) && curr.index > values.min.index) {
-            maxChanged = true;
+        } else if ((!values.max || curr.value > values.max.value) && curr.index > values.min.index) {
             values.max = curr;
-            i--;
         }
 
         // Super update
-        if (!minChanged && !maxChanged) {
-            if (values.minTemp && curr.value - values.minTemp.value > values.diff) {
-                values.min = values.minTemp;
-                values.max = curr;
-                values.minTemp = null;
-            } else if (
-                (!values.min || curr.value < values.min.value) &&
-                (!values.minTemp || curr.value <= values.minTemp.value)
-            ) {
-                values.minTemp = curr;
-            }
+        if (values.minTemp && curr.value - values.minTemp.value > values.diff) {
+            values.min = values.minTemp;
+            values.max = curr;
+            values.minTemp = null;
+        } else if (isCurrLowerThanMin && (!values.minTemp || curr.value <= values.minTemp.value)) {
+            values.minTemp = curr;
         }
 
         // update diff
         if (values.max && values.min) {
             values.diff = values.max.value - values.min.value;
         }
-        // console.log('value =', curr.value, 'i =', i, '\nvalues:', values);
     }
-    return values.diff && values.diff > 0 ? values.diff : 0;
+    return values.diff || 0;
 };
 
 console.log(maxProfit([3, 10, 6, 6, 6, 6, 2, 8, 11])); //   R: 9
