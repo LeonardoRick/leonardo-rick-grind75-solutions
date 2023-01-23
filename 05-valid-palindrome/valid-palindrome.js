@@ -3,7 +3,7 @@
  * @param {string} s
  * @return {boolean}
  */
-const isPalindrome = function (s) {
+var isPalindrome = function (s) {
     const palindrome = s.replace(/[^a-zA-Z0-9]*/g, '').toLocaleLowerCase();
     let i = 0;
     let j = palindrome.length - 1;

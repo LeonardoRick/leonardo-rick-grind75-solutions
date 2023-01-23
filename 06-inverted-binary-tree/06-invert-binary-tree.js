@@ -22,7 +22,7 @@ class TreeNode {
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-const invertTree = function (root) {
+var invertTree = function (root) {
     let aux;
     if (root) {
         if (root.left) {

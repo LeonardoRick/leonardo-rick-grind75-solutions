@@ -4,7 +4,7 @@
  * @param {string} t
  * @return {boolean}
  */
-const isAnagram = function (s, t) {
+var isAnagram = function (s, t) {
     const countS = {};
     const countT = {};
     if (s.length !== t.length) {

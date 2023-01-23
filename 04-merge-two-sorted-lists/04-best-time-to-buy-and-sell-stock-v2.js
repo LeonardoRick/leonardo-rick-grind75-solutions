@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 // more simpler solution improoving this one: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solutions/2433981/easy-100-kadane-s-algorithm-java-c-python-js-python3-min-so-far/?languageTags=javascript
-const maxProfit = function (prices) {
+var maxProfit = function (prices) {
     if (prices == null || prices.length <= 1) return 0;
     let minBuy = prices[0];
     let profit = 0;

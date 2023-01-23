@@ -3,7 +3,7 @@
  * @param {number[]} prices
  * @return {number}
  */
-const maxProfit = function (prices) {
+var maxProfit = function (prices) {
     const values = {
         min: null,
         max: null,

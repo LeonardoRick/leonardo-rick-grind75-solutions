@@ -3,7 +3,7 @@
  * @param {string} s
  * @return {boolean}
  */
-const isValid = function (s) {
+var isValid = function (s) {
     const pipe = [];
     const correspondingObject = {
         '(': ')',

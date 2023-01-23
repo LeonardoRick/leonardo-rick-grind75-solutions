@@ -19,7 +19,7 @@ function isNodeValid(node) {
  * @param {ListNode} list2
  * @return {ListNode}
  */
-const mergeTwoLists = function (list1, list2) {
+var mergeTwoLists = function (list1, list2) {
     let finalList = new ListNode();
     const head = finalList;
 
