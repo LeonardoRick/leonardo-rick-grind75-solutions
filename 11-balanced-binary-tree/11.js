@@ -16,14 +16,14 @@ var isBalanced = function (root) {
                 return depth;
             }
 
-            // if (root.left) {
-            leftDepth = search(root.left, depth + 1);
-            // }
+            if (root.left) {
+                leftDepth = search(root.left, depth + 1);
+            }
 
-            // if (root.right) {
-            rightDepth = search(root.right, depth + 1);
-            // }
-
+            if (root.right) {
+                rightDepth = search(root.right, depth + 1);
+            }
+            // console.log(root.val, ':', leftDepth, rightDepth, '| depth:', depth, 'max:', max);
             max = Math.max(Math.abs(leftDepth - rightDepth), max);
             return Math.max(leftDepth, rightDepth);
         }

@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/merge-two-sorted-lists/
 
-import { logObject } from '../shared/utis.js';
+import { logObject } from '../shared/utils.js';
 import { ListNode } from './common/list-node.model.js';
 
 /**

@@ -27,7 +27,7 @@ var isBalanced = function (root) {
             if (root.right) {
                 rightDepth = search(root.right, depth + 1);
             }
-
+            // console.log(root.val, ':', leftDepth, rightDepth, '| depth:', depth, 'max:', max);
             max = Math.max(Math.abs(leftDepth - rightDepth), max);
             unstable = max > 1;
             return Math.max(leftDepth, rightDepth);
