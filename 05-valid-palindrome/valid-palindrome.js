@@ -22,5 +22,6 @@ var isPalindrome = function (s) {
 // get first and last letter and check if they're equal
 
 console.log(isPalindrome('socorram me subi no onibus em marrocos'));
+console.log(isPalindrome('A man, a plan, a canal: Panama'));
 console.log(isPalindrome('arara'));
 console.log(isPalindrome('arra'));
