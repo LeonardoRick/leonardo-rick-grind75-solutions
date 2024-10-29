@@ -26,10 +26,12 @@ var countMaxOrSubsets = function (nums) {
 
 const res = countMaxOrSubsets([3, 2, 1,  5]);
 console.log(res)
-// res.forEach(r => console.log(r));
 
 
-
+/**
+ * part of the above algorithm is to find all subsets of a list and this is an example of how to do it.
+ * The idea is to analyse what subsets we already have inside our final list and combine the new number with all of them
+ */
 // https://stackoverflow.com/questions/42773836/how-to-find-all-subsets-of-a-set-in-javascript-powerset-of-array
 // el = 1
 // last = 0

@@ -15,6 +15,9 @@
 // you’re not sure where to start. You could topologically sort the graph
 // and get a list of tasks to do, in order.
 
+// ! this is a depth first search, not a breadth-first search. I couldn't find
+// ! a way to solve the problem that made sense using breadth first search
+
 const graph = {
     "Wake Up": ["Exercise", "Brush Teeth", "Pack Lunch"],
     "Exercise": ["Shower"],
