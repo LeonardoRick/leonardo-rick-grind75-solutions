@@ -94,3 +94,39 @@ var maxMoves = function (grid) {
 //         [193,131,244,293,284,175,226,205,245]]
 //     )
 // ); // 3
+
+
+// ?
+// ?  ChatPGT explanation on how to find the best solution
+// ?
+
+// For this problem, the key to solving it lies in finding the longest path that meets the rules without exhaustively trying every possible route. Let’s break it down step by step and go over the logic to develop a solution:
+
+// 	1.	Grid Navigation Rules:
+// -	•	You start in any cell in the first column (column 0) and can move only to the right, with three possible directions:
+// -	•	Right-up (row - 1, col + 1)
+// -	•	Right (row, col + 1)
+// -	•	Right-down (row + 1, col + 1)
+// =	•	Each move must go to a cell with a value strictly greater than the current cell’s value.
+// 	2.	Goal:
+// -	•	The goal is to find the maximum number of moves (steps) you can take, starting from any cell in the first column, by following the grid navigation rules.
+// 	3.	Dynamic Programming (DP) Approach:
+// -	•	To avoid recalculating paths from scratch multiple times, a dynamic programming solution is ideal.
+// -	•	Define a DP table (or memoization table) dp[row][col], where each entry will store the maximum number of moves starting from grid[row][col].
+// -	•	This means that instead of exploring all paths at once, we calculate and store the longest path from each cell once, then use this information as we proceed through the grid.
+// 	4.	Bottom-up DP Solution (Reverse Calculation):
+// -	•	Since we know our moves go only to the right, we can build our solution from the last column back to the first column.
+// -	•	Starting from the last column, set each dp[row][last_col] = 0 because there are no moves possible when starting from any cell in the last column.
+// -	•	For each column before the last, calculate the maximum possible moves from each cell (row, col) by considering the three valid moves:
+// -	•	Right-up, Right, and Right-down.
+// -	•	If any of these moves satisfy the condition (i.e., grid[row][col] < grid[new_row][new_col]), then set dp[row][col] to 1 + dp[new_row][new_col], where dp[new_row][new_col] is the maximum moves from the destination cell.
+// -	•	The value of dp[row][col] will then represent the maximum moves possible starting from grid[row][col].
+// 	5.	Final Answer:
+// -	•	The maximum moves will be the highest value of dp[row][0] across all rows in the first column. This represents the maximum moves starting from the first column and reaching as far as possible to the right under the movement constraints.
+// 	6.	Complexity:
+// -	•	Each cell is visited once, and for each cell, we evaluate up to three possible moves (right-up, right, and right-down).
+// -	•	With m rows and n columns, this approach has a time complexity of O(m * n), which is efficient given the constraints.
+
+// By following this approach, you can keep track of paths efficiently without needing to know every possible future path right from the start! The DP table essentially “remembers” the best possible moves, building up an optimal solution from the ground up.
+
+// This approach keeps computations local, allowing each cell to “see” its best path options based on previously computed moves, which avoids redundant calculations and makes the solution efficient.
