@@ -2,6 +2,7 @@
  * @lc app=leetcode id=1957 lang=javascript
  *
  * [1957] Delete Characters to Make Fancy String
+ * https://leetcode.com/problems/delete-characters-to-make-fancy-string/description/
  */
 
 // @lc code=start

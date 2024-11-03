@@ -2,10 +2,8 @@
  * @lc app=leetcode id=1671 lang=javascript
  *
  * [1671] Minimum Number of Removals to Make Mountain Array
+ * https://leetcode.com/problems/minimum-number-of-removals-to-make-mountain-array/description/
  */
-
-import util from 'util';
-import { formatInlineArray, logObject } from '../../shared/utils.js';
 
 // @lc code=start
 /**
