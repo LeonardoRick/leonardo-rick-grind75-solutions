@@ -12,13 +12,20 @@ graph.thom = [];
 graph.jonny = [];
 
 function search(name) {
+
+    // ? obs: I commented this part because I remembered about it later and I don't know if it was in the original implementation or
+    // ? not, but if 'you' is the mango seller we are never returning true so i added a root verification
+    if (isFriendSeller(name)) {
+        return true;
+    }
     // we assume that if we are starting the search into someone's name, this person is not the one that sells mangoes
     const searched = new Set(name);
     const searchQueue = graph[name];
     while (searchQueue.length) {
         const friend = searchQueue.shift();
+        console.log(friend);
         if (!searched.has(friend)) {
-            if (friendIsSeller(friend)) {
+            if (isFriendSeller(friend)) {
                 console.log(friend, 'is the closest mango seller');
                 return true;
             }
@@ -36,8 +43,12 @@ function search(name) {
  * @param {string} name
  * @returns {boolean}
  */
-function friendIsSeller(name) {
+function isFriendSeller(name) {
     return name[name.length -1] === 'm';
 }
 
-search('you');
+// function isFriendSeller(name) {
+//     return name === 'you';
+// }
+
+console.log(search('you'));
